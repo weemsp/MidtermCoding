@@ -89,13 +89,18 @@ public abstract class Person implements java.io.Serializable {
 	 */
 
 	public Person(String FirstName, String MiddleName, String LastName,
-			Date DOB, String Address, String Phone_number, String Email)
+			Date DOB, String Address, String Phone_number, String Email) throws PersonException
 	{
 		this.FirstName = FirstName;
 		this.MiddleName = MiddleName;
 		this.LastName = LastName;
+		if (DOB.getTime() - (new Date()).getTime() >= 3153599999999.959)
+			throw new PersonException(this);
 		this.setDOB(DOB);
 		this.address = Address;
+		//"^\\(?([0-9]{3})\\)?[-.\\s]?([0-9]{3})[-.\\s]?([0-9]{4})$"
+		if (!Pattern.compile("[(]([0-9]{3})[(][0-9]{3})[-]([0-9]{4})").matcher(Phone_number).matches())
+			throw new PersonException(this);
 		this.setPhone(Phone_number);
 		this.email_address = Email;
 		
