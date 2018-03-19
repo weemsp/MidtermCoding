@@ -7,5 +7,15 @@ public class Semester {
 	private UUID SemesterID;
 	private Date StartDate;
 	private Date EndDate;
+	
+	public Semester(Date start, Date end) {
+		SemesterID = UUID.randomUUID();
+		StartDate = start;
+		EndDate = end;
+	}
+	
+	public UUID getID() {
+		return SemesterID;
+	}
 }
 
