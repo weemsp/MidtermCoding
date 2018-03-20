@@ -44,10 +44,11 @@ public class Student_Test {
 	@Test
 	public void test() {
 		ArrayList<Enrollment> mints;
-		
+		Enrollment newen;
 		for (int i = 0; i < students.size(); i++) {
 			for (int j = 0; j < sections.size(); j++) {
-				mints.add(new Enrollment(students.get(i), sections.get(j)));
+				newen = new Enrollment(students.get(i), sections.get(j));
+				mints.add(newen);
 			}
 		}
 		assertEquals(0, 0);
