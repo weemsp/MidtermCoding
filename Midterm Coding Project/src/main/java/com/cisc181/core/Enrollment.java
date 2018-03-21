@@ -7,6 +7,7 @@ public class Enrollment {
 	private UUID StudentID;
 	private UUID EnrollmentID;
 	private double Grade;
+	private int points;
 	
 	private Enrollment() {
 		
@@ -18,10 +19,11 @@ public class Enrollment {
 		this.EnrollmentID = UUID.randomUUID();
 	}
 	
-	public Enrollment(Student Student, Section Section) {
+	public Enrollment(Student student, Section section) {
 		this.StudentID = Student.getID();
 		this.SectionID = Section.getID();
 		this.EnrollmentID = UUID.randomUUID();
+		student.add(this);
 	}
 	
 	public void SetGrade(double grade) {

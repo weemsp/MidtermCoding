@@ -48,9 +48,11 @@ public class Student_Test {
 		for (int i = 0; i < students.size(); i++) {
 			for (int j = 0; j < sections.size(); j++) {
 				newen = new Enrollment(students.get(i), sections.get(j));
+				newen.setGrade(1.0);
 				mints.add(newen);
 			}
 		}
 		assertEquals(0, 0);
 	}
+	//There doesn't seem to be a way to track the points for these classes because everything uses UUIDs instead of just object references
 }

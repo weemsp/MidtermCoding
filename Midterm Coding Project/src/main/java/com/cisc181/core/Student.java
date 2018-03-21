@@ -9,6 +9,7 @@ public class Student extends Person {
 
 	private eMajor Major;
 	private UUID StudentID;
+	private ArrayList<Enrollment> enrollments;
 	
 	public eMajor getMajor ( )
     {
@@ -30,6 +31,10 @@ public class Student extends Person {
 		this.StudentID = UUID.randomUUID();
 		this.Major = Major;
 		
+	}
+	
+	public addEnrollment(Enrollment en) {
+		enrollments.add(en);
 	}
 	
 	@Override
