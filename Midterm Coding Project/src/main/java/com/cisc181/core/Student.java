@@ -30,11 +30,20 @@ public class Student extends Person {
 		super(FirstName, MiddleName, LastName, DOB, Address, Phone_number, Email);
 		this.StudentID = UUID.randomUUID();
 		this.Major = Major;
-		
+		enrollments = new ArrayList();
 	}
 	
-	public addEnrollment(Enrollment en) {
+	public void addEnrollment(Enrollment en) {
 		enrollments.add(en);
+	}
+	
+	public double getGPA() {
+		double val = 0;
+		int totalPoints = 0;
+		for (Enrollment en : enrollments) {
+			val +=  
+			totalPoints += en.GetGrade();
+		}
 	}
 	
 	@Override

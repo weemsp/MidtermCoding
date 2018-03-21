@@ -48,7 +48,7 @@ public class Student_Test {
 		for (int i = 0; i < students.size(); i++) {
 			for (int j = 0; j < sections.size(); j++) {
 				newen = new Enrollment(students.get(i), sections.get(j));
-				newen.setGrade(1.0);
+				newen.setGrade(1.0 - j * 0.1);
 				mints.add(newen);
 			}
 		}
